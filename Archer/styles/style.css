@@ -1,12 +1,12 @@
 /*
 filename: Style
-author: Joshua/Rhyan/Nitesh
+author: Nitesh
 created: 4/9/2023
 description: [assignment 2]
 */
 /* This is a single-line comment */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 610px) {
 
   header div{padding: 0;}
   .content1c{
@@ -21,21 +21,17 @@ description: [assignment 2]
 }
 
 
-/* This is a single-line comment */
+/* Back layer */
 body {
   margin: 0;
-  background-image: url("../styles/images/background.png");
+  background-image: url("../styles/images/background.jpg");
   background-repeat: repeat-y;
   background-size: cover;
 }
 /* This is a single-line comment */
-.menu p {
-  display: inline-block;
-}
-/* This is a single-line comment */
 header{
-    background-color:rgb(51, 51, 51);
-    background-image: linear-gradient(black,rgb(51, 51, 51)) ;
+    background-color:rgb(169, 156, 156);
+    background-image: linear-gradient(black,rgb(64, 64, 64)) ;
     padding: 0px 0px;
     border:0 px 0px;
     margin:0px 0px 0px 0px;
@@ -48,73 +44,17 @@ header{
 }
 .header{
    padding:0px 0px 0px 0px;
-
 }
 div{
     padding-left:40px;
     padding-right: 40px;
     overflow: hidden;
    max-width:100%}
-/* This is a single-line comment */
+/* header division */
 header div{
            display: inline-block;
            }
-/* company logo */
-header div img{height: 170px;
-               max-width:100%;
-                }
-/* navigation deco */
 
-
-a:hover{
-background-color:lightblue;
-border-color:darkblue;
-box-shadow: 10px 10px 5px #6c96a3;
-}
-
-
-/* menu lists devision*/
-.menu{
-     width: 50%; 
-     height: 50px; 
-     font-size: 16px; 
-     font-weight: bold; 
-     font-family:"Open Sans", Helvetica, Arial, sans-serif ;
-     padding-right: 0px;
-     display: inline-block;
-     text-align: center;
-}
-/* apply button division*/
-.applyy{padding-left: 40px; padding-right: 0px;
-        border-left: 2px solid rgba(255, 255, 255, 0.342);}
-/* apply button <a> */
-#applybutton{border: 2px solid rgb(186, 176, 176);
-           display: flex;
-           font-size: 16px;
-           font-weight: 400;
-           text-decoration: none;
-           background-color: rgba(255, 77, 77, 0.089);
-           height: 25px;
-           padding:10px 13px 10px 10px;
-           color:white;
-           text-align:center;
-           }
-#applybutton:hover{
-    background-color: red;
-    box-shadow: 0px 0px 5px 5px rgba(255, 0, 0, 0.521);
-    animation-duration:2s ;
-}
-/* header image division*/
-.h_image {
-    width: 20%;
-}
-/* Introduction */
-.intro{height: 300px;
-    background-color: antiquewhite;
-    background-image: linear-gradient(rgb(51, 51, 51),rgb(255, 255, 255)) ;
-    padding-bottom: 100px;
-    padding-left: 40px;
-}
 /* Main Header */
 h1 {
     font-size:3em;
@@ -122,43 +62,6 @@ h1 {
     padding-top: 100px;
     border-bottom: 2px solid black;
 }
-/* introduction passage */
-#intropass{
-    padding-left: 40px;
-
-}
-/* List of reasons to choose our software division */
-.content1a{
-  background-color: aliceblue;
-}
-.content1b{
-  
-  background-image: url(images/code.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-  height: 1000px;
-  background-size:cover;
-  box-sizing: border-box;
-  display: flex;
-}
-.content1c{
-    background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 200%;
-  left: 40%;
-  width: 20%;
-  padding: 10px;
-  text-align: center;
-}
-div ol li{list-style-type: circle;}
-#join_team{text-decoration: none;
-           color:antiquewhite}
 /* FOOTER*/
 footer {
     border: 0;
@@ -180,22 +83,13 @@ footer {
     }
 
 
-/* FORM */
-/*ensures when the page is viewed in a smaller or bigger size, it will transform to fit the page for example mobile phones*/
+/*smaller or bigger size scalability*/
 input[type=text] {
           width: 100%;
           padding: 12px 20px;
           margin: 8px 0;
           box-sizing: border-box; 
             }
-
-input[type=email] {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          box-sizing: border-box;
-            }
-
 select {
           width: 12%;
           padding: 4px 10px;
@@ -203,72 +97,22 @@ select {
           box-sizing: border-box;
             }
 
-input[type=date] {
-          width: 12%;
-          padding: 4px 10px;
-          margin: 6px 0;
-          box-sizing: border-box;
-            }
-
-.gender {
-    margin-bottom: 10px;
-    line-height: 0.8;
-    text-align: left;
-  }
-
 input[type="submit"] {
-  font-size: 16px;   
-  padding: 10px 20px; /*make the buttons bigger*/
+  font-size: 15px;   
+  padding: 10px 20px; /*bigger buttons for submit*/
 }
 
 
 input[type="reset"] {
-  font-size: 16px;   
-  padding: 10px 20px; /*make the buttons bigger*/
-}
-
-/* About */
-
-.group {
-    font-weight: bold;
-    font-size: 3rem;
-    text-align: center;
-}
-
-#tutor {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-.name {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-.course {
-    font-weight: bold;
-    font-size: 1rem; /* Set the font size to 1rem (same as ID) */
-}
-
-
-.ID {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-
-.container .photo {
-    float: right;
-}
-
-.container .email {
-    clear: right; 
-    display: block;
+  font-size: 15px;   
+  padding: 10px 20px; /*bigger buttons for reset */
 }
 
 .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #D3D3D3;
+            background-color: #dad5d59a;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 #table {
@@ -287,37 +131,3 @@ input[type="reset"] {
     background-color: rgba(0,87,146,255);
     font-weight: bold;
 }
-
-
-
-.border-box {
-            width: 100px;
-            height: 100px;
-            background-color: rgba(0,87,146,255);
-            border-radius: 10px;
-            border: 2px solid black;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 12px;
-	    display: flex;
-	    align-items: center;	
-	    justify-content: center;
-	    align-items: center;
-	    }
-
-
-.video-container {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    height: 100vh; 
-}
-
-.centered-video {
-    max-width: 100%;
-    max-height: 100%;
-}
-
