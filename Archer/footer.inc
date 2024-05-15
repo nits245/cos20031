@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Header" />
     <meta name="keywords"    content="Header" />
-    <meta name="author"      content="Joshua Jasin" />
+    <meta name="author"      content="nits" />
   <link href="styles/style.css" rel="stylesheet"/> 
 	<div class="footer">
 	<footer>
