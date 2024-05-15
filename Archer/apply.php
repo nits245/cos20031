@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Job Application" />
-  <meta name="keywords"    content="HTML, CSS" />
-  <meta name="author"      content="Joshua Jasin" />
+  <meta name="description" content="Archery club database" />
+  <meta name="keywords"    content="" />
+  <meta name="author"      content="nits" />
   <title>Job Application</title>
   <link href="styles/style.css" rel="stylesheet">
   <style>
