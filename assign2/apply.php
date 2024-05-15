@@ -23,23 +23,21 @@ include("menu.inc");
   <form method = "post" action="https://mercury.swin.edu.au/it000000/formtest.php">
    <fieldset>
     <legend>Job Code:</legend>
-    <p><label for="jID">Job reference number</label>
-<input type="text" name="jID" id="jID" minlength="5" maxlength="5" placeholder="Must be valid Job number" required pattern="(#AB12|#XZ34)" />
+    <p><label for="ArcherID">Archer ID</label>
+<input type="text" name="ArcherID" id="ArcherID" minlength="1" maxlength="6" placeholder="Enter a valid Archer ID." required pattern="(#AB12|#XZ34)" />
 	</fieldset>
         <fieldset>
-        <legend>Your Information:</legend>
-    <p><label for="Fname">First name:</label>
-    <input type="text" name = "Fname" id="Fname" pattern="[A-Za-z]+" maxlength="20" required/>
-    <p><label for="Lname">Last name:</label>
-    <input type="text" name = "Lname" id="Lname" pattern="[A-Za-z]+" maxlength="20" required/>
-    <p><label for="sAddress">Street Address:</label>
-    <input type="text" name = "sAddress" id="sAddress" maxlength="40" required/>
-   <p><label for="SubTow">Suburb/town:</label>
-    <input type="text" name = "SubTow" id="SubTow"  maxlength="40" required/>
-   <p><label for="pCode">Postcode:</label>
-    <input type="text" name = "pCode" id="pCode" minlength="4" maxlength="4" required/>
-      <p><label for="date">Date of birth</label>
-    <input type="date" name = "Date" id="date" />
+        <legend>Archer Information:</legend>
+    <p><label for="Name">First name:</label>
+    <input type="text" name = "Name" id="Name" pattern="[A-Za-z]+" maxlength="20" required/>
+    <p><label for="Gender">Gender:</label>
+    <input type="text" name = "Gender" id="Gender" pattern="[A-Za-z]+" maxlength="20" required/>
+    <p><label for="Age">Age:</label>
+    <input type="text" name = "Age" id="Age" maxlength="3" required/>
+   <p><label for="DivisionID">Division ID:</label>
+    <input type="text" name = "DivisionID" id="DivisionID"  maxlength="5" required/>
+   <p><label for="EquipmentTypeID">Equipment Type ID:</label>
+    <input type="text" name = "EquipmentTypeID" id="EquipmentTypeID" maxlength="5" required/>
     <label for="state">State:</label>
   <select name="state" id="state" required>
     <option value="" disabled selected hidden>Please Select</option>
