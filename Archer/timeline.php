@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-     include("header.inc");  
+     <?php include("header.inc");  ?>
 <h1>Timeline</h1>
 <div class="timeline-container">
     <div class="timeline-item left">
