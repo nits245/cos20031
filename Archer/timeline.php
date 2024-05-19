@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="timeline-header">
-            <div class="timeline-header_title">
-                <h2>Diversity</h2>
-            </div>
-            <nav class="timeline-header_nav">
-                <a href="archer.php">Home</a>
-                <a href="timeline.php" id="timeline-current_nav">Timeline</a>
-            </nav>
-        </div>
-    </header>
+     include("header.inc");  
 <h1>Timeline</h1>
 <div class="timeline-container">
     <div class="timeline-item left">
