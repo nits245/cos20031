@@ -9,5 +9,13 @@
 </head>
   <div class="header">
     <header>
-</div>
-</header>
+        <div class="timeline-header">
+            <div class="timeline-header_title">
+                <h2>Diversity</h2>
+            </div>
+            <nav class="timeline-header_nav">
+                <a href="archer.php">Home</a>
+                <a href="timeline.php" id="timeline-current_nav">Timeline</a>
+            </nav>
+        </div>
+    </header>
