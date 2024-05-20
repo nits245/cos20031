@@ -11,18 +11,47 @@
 	</head>
 	
 	<body>
-		<?php
-            include("header.inc");
-            session_start();
-            if (isset($_POST["login"])){
-    if (isset($_POST["username"])){$username = trim($_POST["username"]);}
-    if (isset($_POST["password"])){$password = trim($_POST["password"]);}
-    if (($username=="admin") AND ($password=="admin123")){$_SESSION["login"] = true;
-    header("location: archer.php");
-    echo $_SESSION["login"];}
-    else{echo"<div class=\"container\">wrong username or password</div>";}
-    }
-        ?>
+	<?php
+    include("header.inc");
+    require_once("settings.php");
+    session_start();
+
+    $connection = @mysqli_connect($host, $user, $pwd, $sql_db);
+
+    if (!$connection) {
+        echo '<p>Error connecting to database.</p>';
+    } else {
+        if (isset($_POST["login"])) {
+            $username = isset($_POST["username"]) ? trim($_POST["username"]) : '';
+            $password = isset($_POST["password"]) ? trim($_POST["password"]) : '';
+
+            $stmt = $connection->prepare("SELECT password FROM admin WHERE username = ?");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $stmt->store_result();
+
+            if ($stmt->num_rows == 1) {
+                $stmt->bind_result($db_password);
+                $stmt->fetch();
+
+                if ($password === $db_password) {
+                    $_SESSION["login"] = true;
+                    header("Location: archer.php");
+                    exit();
+                } else {
+                    echo "<div class=\"container\">Wrong username or password</div>";
+                }
+            } else {
+                echo "<div class=\"container\">Wrong username or password</div>";
+            }
+
+            $stmt->close();
+        }
+
+        mysqli_close($connection);
+    	}
+	?>
+
 		
 		<div class="container">
                 <fieldset>
@@ -31,7 +60,6 @@
 				<h1 id="title">Admin login</h1>
 				<h2 id="subtitle">In order to query database, your identity needs to be verified.</h2>
 
-                <!-- Radio choice: which query admin would like to make -->
                 <div>
                         <legend>Administrator credentials</legend>
                         <div>
@@ -49,7 +77,6 @@
  
                 </div>
 
-				<!-- Login button -->
 				<div>
 					<div>
 						<div>
@@ -62,7 +89,6 @@
                 </fieldset>
 		</div>
   
-		<!-- Footer -->
 		<?php
             include("footer.inc");
         ?>
