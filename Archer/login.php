@@ -80,7 +80,6 @@
 				<div>
 					<div>
 						<div>
-							<label for="login">Login</label>
 							<input type="submit" name="login" id="login" value="Login"/>
 						</div>
 					</div>

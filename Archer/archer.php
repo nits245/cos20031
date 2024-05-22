@@ -246,14 +246,14 @@ else{echo"Enter Target Face";}
     <legend>List archer information for a particular applicant:</legend>
     <form method = "post" action="archer.php">
     <p><label for="ArcherID">Archer ID:</label>
-    <input type="text" value = "Enter Archer ID" name = "ArcherID" id="ArcherID" required minlength="1" maxlength="10"/>
+    <input type="text" placeholder= "Enter Archer ID" name = "ArcherID" id="ArcherID" required minlength="1" maxlength="10"/>
     <p><label for="Name">Name:</label>
-    <input type="text" value = "Enter Name" name = "Name" id="Name" pattern="[A-Za-z]+" minlength="1" maxlength="20" required/>
+    <input type="text" placeholder= "Enter Name" name = "Name" id="Name" pattern="[A-Za-z]+" minlength="1" maxlength="20" required/>
     <label><input type="radio" name="Gender" required value="Male" /> Male </label>
     <label><input type="radio" name="Gender" value="Female" /> Female </label>
     <label><input type="radio" name="Gender" value="Others" /> Others </label><br>
     <p><label for="Age">Age:</label>
-    <input type="text" value = "Enter Age" name = "Age" id="Age" maxlength="3" required/>
+    <input type="text" placeholder= "Enter Age" name = "Age" id="Age" maxlength="3" required/>
     <input type="submit" name = "button3" value="List all information for this applicant">
     </form>
     </fieldset>
