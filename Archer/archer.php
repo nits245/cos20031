@@ -75,7 +75,7 @@
         else {echo"<table border=\"1\">\n";
                       echo"<tr>\n";
                       echo"<td>RoundID</th>\n";
-                      echo"<td>Name</th>\n";
+                      echo"<td>ArcherID</th>\n";
                       echo"<td>TotalArrows</td>\n";
                       echo"<td>Distance<td>\n";
                       echo"<td>TargetFace<td>\n";
@@ -84,7 +84,7 @@
                     {
                       echo"<tr>\n";
                       echo"<td>",$row["RoundID"],"</td>\n";
-                      echo"<td>",$row["Name"],"</td>\n";
+                      echo"<td>",$row["ArcherID"],"</td>\n";
                       echo"<td>",$row["TotalArrows"],"</td>\n";
                       echo"<td>",$row["Distance"],"<td>\n";
                       echo"<td>",$row["TargetFace"],"<td>\n";
@@ -150,7 +150,7 @@
               else {echo"<table border=\"1\">\n";
                 echo"<tr>\n";
                 echo"<td>RoundID</th>\n";
-                echo"<td>Name</th>\n";
+                echo"<td>ArcherID</th>\n";
                 echo"<td>TotalArrows</td>\n";
                 echo"<td>Distance<td>\n";
                 echo"<td>TargetFace<td>\n";
@@ -159,7 +159,7 @@
                     {
                       echo"<tr>\n";
                       echo"<td>",$row["RoundID"],"</td>\n";
-                      echo"<td>",$row["Name"],"</td>\n";
+                      echo"<td>",$row["ArcherID"],"</td>\n";
                       echo"<td>",$row["TotalArrows"],"</td>\n";
                       echo"<td>",$row["Distance"],"<td>\n";
                       echo"<td>",$row["TargetFace"],"<td>\n";
@@ -174,8 +174,8 @@
     if (isset($_POST["button5"])){
 if (isset($_POST["RoundID"])){$RoundID = trim($_POST["RoundID"]);}
 else{echo"Enter Round ID";}
-if (isset($_POST["Name"])){$Name = trim($_POST["Name"]);}
-else{echo"Write a Name";}
+if (isset($_POST["ArcherID"])){$ArcherID = trim($_POST["ArcherID"]);}
+else{echo"Write Archer ID";}
 if (isset($_POST["TotalArrows"])){$TotalArrows = trim($_POST["TotalArrows"]);}
 else{echo"Enter Total Arrows";}
 if (isset($_POST["Distance"])){$Distance = trim($_POST["Distance"]);}
@@ -185,8 +185,8 @@ else{echo"Enter Target Face";}
 
         if (!$connection){echo'<p>Error connecting to database.</p>';}
         else{
-        $query5b = "INSERT INTO Round (RoundID,Name,TotalArrows,Distance,TargetFace)
-        VALUES ('".$RoundID."', '".$Name."', '".$TotalArrows."', '".$Distance."', '".$TargetFace."');";
+        $query5b = "INSERT INTO `Round`(`RoundID`, `ArcherID`, `TotalArrows`, `Distance`, `TargetFace`)
+        VALUES ('".$RoundID."', '".$ArcherID."', '".$TotalArrows."', '".$Distance."', '".$TargetFace."');";
         $result5b = mysqli_query($connection,$query5b);
         if (!$result5b){echo"<p>something is wrong with query ",$query5b,"</p>";}
         $query5 = "SELECT * from Round ORDER BY RoundID ASC";
@@ -195,7 +195,7 @@ else{echo"Enter Target Face";}
         else {echo"<table border=\"1\">\n";
                       echo"<tr>\n";
                       echo"<td>RoundID</th>\n";
-                      echo"<td>Name</th>\n";
+                      echo"<td>ArcherID</th>\n";
                       echo"<td>TotalArrows</td>\n";
                       echo"<td>Distance<td>\n";
                       echo"<td>TargetFace<td>\n";
@@ -204,7 +204,7 @@ else{echo"Enter Target Face";}
                     {
                       echo"<tr>\n";
                       echo"<td>",$row["RoundID"],"</td>\n";
-                      echo"<td>",$row["Name"],"</td>\n";
+                      echo"<td>",$row["ArcherID"],"</td>\n";
                       echo"<td>",$row["TotalArrows"],"</td>\n";
                       echo"<td>",$row["Distance"],"<td>\n";
                       echo"<td>",$row["TargetFace"],"<td>\n";
@@ -271,7 +271,7 @@ else{echo"Enter Target Face";}
     <legend>Add a new record</legend>
     <form method="post" action="archer.php">
     <input type="text" name="RoundID" id="RoundID" minlength="0" maxlength="5" required placeholder="Enter valid Round ID" />
-    <input type="text" name="Name" id="Name" minlength="0" maxlength="40" required placeholder="Enter name" />
+    <input type="text" name="ArcherID" id="ArcherID" minlength="0" maxlength="40" required placeholder="Enter Archer ID" />
     <input type="text" name="TotalArrows" id="TotalArrows" minlength="0" required maxlength="5" placeholder="Enter total arrows shot" />
     <p>Distance(in m) :
     <select name="Distance" id="Distance">
