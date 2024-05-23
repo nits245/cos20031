@@ -32,7 +32,7 @@ if (isset($_POST['gameID'], $_POST['archerID'], $_POST['end_number'], $_POST['sc
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $stmt = $connection->prepare("INSERT INTO Score (ScoreID, GameID, ArcherID, TotalScore) VALUES (?, ?, ?, ?)");
+    $stmt = $connection->prepare("INSERT INTO score (ScoreID, GameID, ArcherID, TotalScore) VALUES (?, ?, ?, ?)");
     if ($stmt) {
         $stmt->bind_param("siii", $uuid, $gameID, $archerID, $totalScore);
         $stmt->execute();
