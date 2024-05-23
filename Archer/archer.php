@@ -7,6 +7,17 @@
   <meta name="author"      content="nits" />
   <title>Archery Club</title>
   <link href="styles/style.css" rel="stylesheet">
+	<script>
+      function calculateTotal() {
+          let total = 0;
+          for (let i = 1; i <= 6; i++) {
+              let shotValue = parseInt(document.getElementById('shot' + i).value) || 0;
+              total += shotValue;
+          }
+          document.getElementById('total').innerText = total;
+      }
+  </script>
+
 </head>
 
 
@@ -290,6 +301,35 @@ else{echo"Enter Target Face";}
     <input type="submit" name = "button5" value="Add Record">
     </form>
     </fieldset>
+
+    <fieldset>
+        <legend>Input Final Score </legend>
+        <form method="post" action="submit_scores.php">
+            <label for="roundID">Game ID:</label>
+            <input type="text" id="gameID" name="gameID" required><br>
+
+            <label for="archerID">Archer ID:</label>
+            <input type="text" id="archerID" name="archerID" required><br>
+
+	    <p><label for="end_number">End Number:</label>
+            <input type="text" name="end_number" id="end_number" required minlength="1" maxlength="5" /></p>
+                
+
+            <label for="score">Score:</label>
+            <input type="number" id="shot1" name="score[]" min="0" max="10" onchange="calculateTotal()" required>
+            <input type="number" id="shot2" name="score[]" min="0" max="10" onchange="calculateTotal()" required>
+            <input type="number" id="shot3" name="score[]" min="0" max="10" onchange="calculateTotal()" required>
+            <input type="number" id="shot4" name="score[]" min="0" max="10" onchange="calculateTotal()" required>
+            <input type="number" id="shot5" name="score[]" min="0" max="10" onchange="calculateTotal()" required>
+            <input type="number" id="shot6" name="score[]" min="0" max="10" onchange="calculateTotal()" required>
+            <br><br>
+
+            <label>Total Score: <span id="total">0</span></label><br><br>
+
+            <input type="submit" name="submit" value="Submit Scores">
+        </form>
+        </fieldset>
+
 
    <fieldset>
     <form method="post" action="logout.php">
