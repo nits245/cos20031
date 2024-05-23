@@ -305,6 +305,12 @@ else{echo"Enter Target Face";}
     <fieldset>
         <legend>Input Final Score </legend>
         <form method="post" action="submit_scores.php">
+	    <label for="scoreID">Arrow ID:</label> 
+            <input type="text" id="arrowID" name="arrowID" required><br>
+
+	    <label for="scoreID">End ID:</label> 
+            <input type="text" id="endID" name="endID" required><br>
+
             <label for="roundID">Game ID:</label>
             <input type="text" id="gameID" name="gameID" required><br>
 
