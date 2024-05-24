@@ -116,34 +116,40 @@
     if (isset($_POST["Age"])){$Age = trim($_POST["Age"]);}
          if (!$connection){echo'<p>Error connecting to database.</p>';}
         else{
-        $query3 = "SELECT * from Archer WHERE ArcherID = '".$ArcherID."' AND  Name = '".$Name."' AND  Gender = '".$Gender."' AND  Age = '".$Age."'";
-        $result3 = mysqli_query($connection,$query3);
-        if (!$result3){echo"<p>something is wrong with query",$query3,"</p>";}
-        else {echo"<table border=\"1\">\n";
-                      echo"<tr>\n";
-                      echo"<td>ArcherID</th>\n";
-                      echo"<td>Name</th>\n";
-                      echo"<td>Gender</td>\n";
-                      echo"<td>Age<td>\n";
-                      echo"<td>DivisionID<td>\n";
-                      echo"<td>EquipmentTypeID<td>\n";
-                      echo"</tr>\n";
-              while ($row = mysqli_fetch_assoc($result3))
-                    {
-                      echo"<tr>\n";
-                      echo"<td>",$row["ArcherID"],"</td>\n";
-                      echo"<td>",$row["Name"],"</td>\n";
-                      echo"<td>",$row["Gender"],"</td>\n";
-                      echo"<td>",$row["Age"],"<td>\n";
-                      echo"<td>",$row["DivisionID"],"<td>\n";
-                      echo"<td>",$row["EquipmentTypeID"],"<td>\n";
-                      echo"</tr>\n";
-                    }
-                 echo"</table>\n";
-                 mysqli_free_result($result3);
-             }
+          $query3 = "SELECT * from Archer WHERE ArcherID = '".$ArcherID."' AND  Name = '".$Name."' AND  Gender = '".$Gender."' AND  Age = '".$Age."'";
+          $result3 = mysqli_query($connection,$query3);
+          if (!$result3){echo"<p>something is wrong with query",$query3,"</p>";}
+          else {
+              if(mysqli_num_rows($result3) > 0){
+                echo"<table border=\"1\">\n";
+                echo"<tr>\n";
+                echo"<td>ArcherID</th>\n";
+                echo"<td>Name</th>\n";
+                echo"<td>Gender</td>\n";
+                echo"<td>Age<td>\n";
+                echo"<td>DivisionID<td>\n";
+                echo"<td>EquipmentTypeID<td>\n";
+                echo"</tr>\n";
+                while ($row = mysqli_fetch_assoc($result3))
+                {
+                  echo"<tr>\n";
+                  echo"<td>",$row["ArcherID"],"</td>\n";
+                  echo"<td>",$row["Name"],"</td>\n";
+                  echo"<td>",$row["Gender"],"</td>\n";
+                  echo"<td>",$row["Age"],"<td>\n";
+                  echo"<td>",$row["DivisionID"],"<td>\n";
+                  echo"<td>",$row["EquipmentTypeID"],"<td>\n";
+                  echo"</tr>\n";
+                }
+                echo"</table>\n";
+              } 
+              else{
+                echo "<p>No records found</p>";
+              }
+              mysqli_free_result($result3);
             }
           }
+      }
 
 
 
