@@ -18,7 +18,7 @@
             if ($current_page != 'login.php') { ?>
             <nav class="timeline-header_nav">
                 <a href="archer.php">Home</a>
-                <a href="timeline.php" id="timeline-current_nav">Timeline</a>
+                <a href="timeline.php">Timeline</a>
             </nav>
             <?php } ?>
         </div>
