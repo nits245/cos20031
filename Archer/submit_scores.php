@@ -46,7 +46,7 @@ if (isset($_POST['endID'], $_POST['arrowID'], $_POST['gameID'], $_POST['archerID
 
         $stmt_end = $connection->prepare("INSERT INTO End (EndID, ScoreID, EndNumber) VALUES (?, ?, ?)");
         if ($stmt_end) {
-            $stmt_end->bind_param("uuu", $endID, $scoreID, $endNumber);
+            $stmt_end->bind_param("iii", $endID, $scoreID, $endNumber);
             $stmt_end->execute();
             $stmt_end->close();
 
