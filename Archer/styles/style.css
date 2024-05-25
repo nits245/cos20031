@@ -163,10 +163,6 @@ h1 {
     font-size: 18px;
 }
 
-.timeline-header_nav a#timeline-current_nav {
-    font-weight: bold;
-    border-bottom: 2px solid #fff;
-}
 
 .timeline-header_nav a:hover {
     color: #ff9f55;
